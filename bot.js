@@ -17,6 +17,10 @@ const openai = new OpenAI({
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
+app.get("/", (req, res) => {
+  res.send("Hello, world!");
+});
+
 // Webhook verification
 app.get("/webhook", (req, res) => {
   const mode = req.query["hub.mode"];
